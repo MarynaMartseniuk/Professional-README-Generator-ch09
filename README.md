@@ -3,5 +3,6 @@ Professional README Generator is  a command-line application that dynamically ge
 
 ## Credits
 In this project the folloing resorces were used:
-1. starter code from tast (module 09, University of Utah bootcamp);
-2.
+1. starter code from the task to the challenge 09 (module 09, University of Utah bootcamp);
+2. Professional README Guide https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
+3. source for code is a activity 26, module 09, University of Utah bootcamp.
