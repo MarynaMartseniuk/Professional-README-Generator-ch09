@@ -22,16 +22,18 @@ const questions1 = [
 ];
 
 const questions2 = [
-    "If your project has a lot of features, list them here.",
-    "If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so."
+    "If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so.",
+    "Provide examples on how to run tests here.",
+    "Provide your GitHub user name",
+    "Provide your email address"
 ];
     
 
 // TODO: Create a function to write README file
+// add user new-input to the readme.md to the previous input that was done before 
 function writeToFile(fileName, data) {
-
-    fs.writeFile('log.txt', JSON.stringify(res), (err) =>
-        err ? console.error(err) : console.log('Success! Check log.txt')
+    fs.appendFile(fileName, data, (err) =>
+        err ? console.error(err) : console.log('Success! Check readme.md')
     );
 }
 
@@ -45,6 +47,7 @@ function init() {
 // Function call to initialize app
 init();
 
+// Description, Instalation, Usage sections:
 for (let i = 0; i < questions1.length; i++) {
     inquirer
     .prompt([
@@ -55,12 +58,46 @@ for (let i = 0; i < questions1.length; i++) {
       },
     ])
     .then((res) => {
-          console.log(res.i);
-          writeToFile(fileName, data);
-      });     
+                        // console.log(res.i);
+                        // resData = JSON.stringify(res);
         
+        // lets write to readme.md user input using Markdown syntax
+        // create a readme.md after user provided first input (project title) (for i=0)
+        if (i === 0) {
+            data = res.toUpperCase();
+            fs.writeFile('readme.md', `# ${data}\n`, (err) =>
+                err ? console.error(err) : console.log('Success! Check readme.md')
+            );
+        };
+        // add to created the readme.md all the rest of user input (for i>=1)
+        if (i === 1) {
+            writeToFile('readme.md', `## Description\n`);
+            writeToFile('readme.md', `### ${res}\n`);
+        };
+        if (2 <= i <= 4) {
+            writeToFile('readme.md', `### ${res}\n`);
+        };
+        if (i === 5) {
+            writeToFile('readme.md', `## Installation\n`);
+            writeToFile('readme.md', `### ${res}\n`);
+        };
+        if (i === 6) {
+            writeToFile('readme.md', `## Usage\n`);
+            writeToFile('readme.md', `### ${res}\n`);
+        };
+        if (i === 7) {
+            writeToFile('readme.md', `## Credits\n`);
+            writeToFile('readme.md', `### ${res}\n`);
+        };
+        if (8 <= i <= 9) {
+            writeToFile('readme.md', `### ${res}\n`);
+        };
+    });     
 };
 
+// License section:
+
+// Contribution, Tests, Questions sections:
 for (let j = 0; j < questions2.length; j++) {
     inquirer
     .prompt([
@@ -71,41 +108,21 @@ for (let j = 0; j < questions2.length; j++) {
       },
     ])
     .then((res) => {
-          console.log(res.j);
-          writeToFile(fileName, data);
+        if (j === 0) {
+            writeToFile('readme.md', `## Contributing\n`);
+            writeToFile('readme.md', `### ${res}\n`);
+        };
+        if (j === 1) {
+            writeToFile('readme.md', `## Tests\n`);
+            writeToFile('readme.md', `### ${res}\n`);
+        };
+        if (j === 2) {
+            writeToFile('readme.md', `## Questions\n`);
+            writeToFile('readme.md', `### If you have any questions, please, contact me using my contact info bellow.`);
+            writeToFile('readme.md', `### my GitHub: https://github.com/${res}\n`);
+        };
+        if (j === 2) {
+            writeToFile('readme.md', `### my email: ${res}\n`);
+        };
       });     
-        
 };
-
-
-//example
-inquirer
-  .prompt([
-
-    {
-      type: 'input',
-      message: 'What is ...?',
-      name: 'question-type1',
-    },
-    {
-        type: 'checkbox',
-        message: 'What is ...?',
-        name: 'question-type2',
-        choices: ["a", "b", "c", "d", "e"]
-    },
-    {
-        type: 'list',
-        message: 'What is ...?',
-        name: 'question-type3',
-        choices: ["x", "y", "w"]
-    }
-  ])
-  .then((res) => {
-        console.log(res.question-type1);
-        console.log(res.question-type2);
-        console.log(res.question-type3);
-
-        fs.writeFile('log.txt', JSON.stringify(res), (err) =>
-            err ? console.error(err) : console.log('Success! Check log.txt')
-        );
-    });
