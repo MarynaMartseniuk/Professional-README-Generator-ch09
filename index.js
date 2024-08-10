@@ -78,34 +78,34 @@ for (let j = 0; j < questions2.length; j++) {
 };
 
 
-// //example
-// inquirer
-//   .prompt([
+//example
+inquirer
+  .prompt([
 
-//     {
-//       type: 'input',
-//       message: 'What is ...?',
-//       name: 'question-type1',
-//     },
-//     {
-//         type: 'checkbox',
-//         message: 'What is ...?',
-//         name: 'question-type2',
-//         choices: ["a", "b", "c", "d", "e"]
-//     },
-//     {
-//         type: 'list',
-//         message: 'What is ...?',
-//         name: 'question-type3',
-//         choices: ["x", "y", "w"]
-//     }
-//   ])
-//   .then((res) => {
-//         console.log(res.question-type1);
-//         console.log(res.question-type2);
-//         console.log(res.question-type3);
+    {
+      type: 'input',
+      message: 'What is ...?',
+      name: 'question-type1',
+    },
+    {
+        type: 'checkbox',
+        message: 'What is ...?',
+        name: 'question-type2',
+        choices: ["a", "b", "c", "d", "e"]
+    },
+    {
+        type: 'list',
+        message: 'What is ...?',
+        name: 'question-type3',
+        choices: ["x", "y", "w"]
+    }
+  ])
+  .then((res) => {
+        console.log(res.question-type1);
+        console.log(res.question-type2);
+        console.log(res.question-type3);
 
-//         fs.writeFile('log.txt', JSON.stringify(res), (err) =>
-//             err ? console.error(err) : console.log('Success! Check log.txt')
-//         );
-//     });
+        fs.writeFile('log.txt', JSON.stringify(res), (err) =>
+            err ? console.error(err) : console.log('Success! Check log.txt')
+        );
+    });
