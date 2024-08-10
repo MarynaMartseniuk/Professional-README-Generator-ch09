@@ -119,7 +119,8 @@ for (let j = 0; j < questions2.length; j++) {
         if (j === 2) {
             writeToFile('readme.md', `## Questions\n`);
             writeToFile('readme.md', `### If you have any questions, please, contact me using my contact info bellow.`);
-            writeToFile('readme.md', `### my GitHub: https://github.com/${res}\n`);
+            writeToFile('readme.md', `### my GitHub user name: ${res}\n`);
+            writeToFile('readme.md', `### my GitHub link: https://github.com/${res}\n`);
         };
         if (j === 2) {
             writeToFile('readme.md', `### my email: ${res}\n`);
