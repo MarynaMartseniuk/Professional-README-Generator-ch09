@@ -28,7 +28,12 @@ const questions2 = [
     
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+    fs.writeFile('log.txt', JSON.stringify(res), (err) =>
+        err ? console.error(err) : console.log('Success! Check log.txt')
+    );
+}
 
 // TODO: Create a function to initialize app
 //??? The application will be invoked by using the following command: node index.js
@@ -40,10 +45,43 @@ function init() {
 // Function call to initialize app
 init();
 
+for (let i = 0; i < questions1.length; i++) {
+    inquirer
+    .prompt([
+      {
+        type: 'input',
+        message: questions1[i],
+        name: i,
+      },
+    ])
+    .then((res) => {
+          console.log(res.i);
+          writeToFile(fileName, data);
+      });     
+        
+};
+
+for (let j = 0; j < questions2.length; j++) {
+    inquirer
+    .prompt([
+      {
+        type: 'input',
+        message: questions2[j],
+        name: j,
+      },
+    ])
+    .then((res) => {
+          console.log(res.j);
+          writeToFile(fileName, data);
+      });     
+        
+};
+
 
 //example
 inquirer
   .prompt([
+
     {
       type: 'input',
       message: 'What is ...?',
