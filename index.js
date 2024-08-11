@@ -68,121 +68,89 @@ const questions1 = [
             return 'N/A';
         },
     },
+    {
+        type: 'input',
+        name: 'contribution',
+        message: "If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so.",
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: "Provide examples on how to run tests here.",
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: "Provide your GitHub user name",
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: "Provide your email address",
+    }
 ];
 
-// const questions2 = [
-//     "If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so.",
-//     // "Provide examples on how to run tests here.",
-//     // "Provide your GitHub user name",
-//     // "Provide your email address"
-// ];
-    
 
 // TODO: Create a function to write README file
 // add user new-input to the readme.md to the previous input that was done before 
+// lets set up timer to get input record in an order we need (every next one will be done later on 50msec)
+let time = 50;
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, `# ${data.title}\n`, (err) =>
-        err ? console.error(err) : console.log('Success! Check readme.md')
-    );
-    // fs.appendFile(fileName, data, (err) =>
-    //     err ? console.error(err) : console.log('Success! Check readme.md')
-    // );
-}
+    setTimeout(() => {
+        fs.appendFile(fileName, data, (err) =>
+            err ? console.error(err) : console.log('Success! Check readme.md')
+        );
+    }, time = time + 50);
+};
 
 // TODO: Create a function to initialize app
 //??? The application will be invoked by using the following command: node index.js
 function init() {
+    // Description, Instalation, Usage, Credits sections:
     inquirer
     .prompt(questions1)
     .then((res) => {
         console.log(res);
-        writeToFile('generatedReadme.md', res);
+        fs.writeFile('generatedReadme.md', `# ${res.title.toUpperCase()}\n`, (err) =>
+            err ? console.error(err) : console.log('Success! Check readme.md')
+        );
+  
+        writeToFile('generatedReadme.md', `## Description\n`);
+        writeToFile('generatedReadme.md', ` ### ${res.motivation}\n `);
+        writeToFile('generatedReadme.md', ` ### ${res.whyBuild}\n `);
+        writeToFile('generatedReadme.md', ` ### ${res.problemSolved}\n `);
+        writeToFile('generatedReadme.md', ` ### ${res.learn}\n `);
+
+        writeToFile('generatedReadme.md', `## Installation\n`);
+        writeToFile('generatedReadme.md', ` ### ${res.installation}\n `);
+
+        writeToFile('generatedReadme.md', `## Usage\n`);
+        writeToFile('generatedReadme.md', ` ### ${res.usage}\n `);
+
+        writeToFile('generatedReadme.md', `## Credits\n`);
+        if (res.credits1 !== 'N/A') {
+            writeToFile('generatedReadme.md', ` ### ${res.credits1}\n `);
+        };
+        if (res.credits2 !== 'N/A') {
+            writeToFile('generatedReadme.md', ` ### ${res.credits2}\n `);
+        };
+        if (res.credits3 !== 'N/A') {
+            writeToFile('generatedReadme.md', ` ### ${res.credits3}\n `);
+        };
+        writeToFile('generatedReadme.md', `## How to Contribute\n`);
+        writeToFile('generatedReadme.md', ` ### ${res.contribution}\n `);
+
+        writeToFile('generatedReadme.md', `## Tests\n`);
+        writeToFile('generatedReadme.md', ` ### ${res.tests}\n `);
+
+        writeToFile('generatedReadme.md', `## Questions\n`);
+        writeToFile('generatedReadme.md', `### If you have any questions, please, contact me using my contact info bellow.\n`);
+        writeToFile('generatedReadme.md', ` ### my GitHub name: ${res.github}\n `);
+        writeToFile('generatedReadme.md', `### my GitHub link: https://github.com/${res.github}\n`);
+        writeToFile('generatedReadme.md', ` ### my email address: ${res.email}\n `);
     }
     );
-
-}
+};
 
 // Function call to initialize app
 init();
-
-// // Description, Instalation, Usage sections:
-// for (let i = 0; i < questions1.length; i++) {
-//     inquirer
-//     .prompt([
-//       {
-//         type: 'input',
-//         message: questions1[i],
-//         name: 'name',
-//       },
-//     ])
-//     .then((res) => {
-//                         // console.log(res.i);
-//                         // resData = JSON.stringify(res);
-        
-//         // lets write to readme.md user input using Markdown syntax
-//         // create a readme.md after user provided first input (project title) (for i=0)
-//         // console.log(res);
-//         if (i === 0) {
-//             data = res.name.toUpperCase();
-//             fs.writeFile('generatedReadme.md', `# ${data}\n`, (err) =>
-//                 err ? console.error(err) : console.log('Success! Check readme.md')
-//             );
-//         };
-//         // // add to created the readme.md all the rest of user input (for i>=1)
-//         // if (i === 1) {
-//         //     writeToFile('generatedReadme.md', `## Description\n`);
-//         //     writeToFile('generatedReadme.md', `### ${res}\n`);
-//         // };
-//         // if (2 <= i <= 4) {
-//         //     writeToFile('generatedReadme.md', `### ${res}\n`);
-//         // };
-//         // if (i === 5) {
-//         //     writeToFile('generatedReadme.md', `## Installation\n`);
-//         //     writeToFile('generatedReadme.md', `### ${res}\n`);
-//         // };
-//         // if (i === 6) {
-//         //     writeToFile('generatedReadme.md', `## Usage\n`);
-//         //     writeToFile('generatedReadme.md', `### ${res}\n`);
-//         // };
-//         // if (i === 7) {
-//         //     writeToFile('generatedReadme.md', `## Credits\n`);
-//         //     writeToFile('generatedReadme.md', `### ${res}\n`);
-//         // };
-//         // if (8 <= i <= 9) {
-//         //     writeToFile('generatedReadme.md', `### ${res}\n`);
-//         // };
-//     });     
-// };
-
-// // License section:
-
-// // Contribution, Tests, Questions sections:
-// for (let j = 0; j < questions2.length; j++) {
-//     inquirer
-//     .prompt([
-//       {
-//         type: 'input',
-//         message: questions2[j],
-//         name: j,
-//       },
-//     ])
-//     .then((res) => {
-//         if (j === 0) {
-//             writeToFile('generatedReadme.md', `## Contributing\n`);
-//             writeToFile('generatedReadme.md', `### ${res}\n`);
-//         };
-//         // if (j === 1) {
-//         //     writeToFile('generatedReadme.md', `## Tests\n`);
-//         //     writeToFile('generatedReadme.md', `### ${res}\n`);
-//         // };
-//         // if (j === 2) {
-//         //     writeToFile('generatedReadme.md', `## Questions\n`);
-//         //     writeToFile('generatedReadme.md', `### If you have any questions, please, contact me using my contact info bellow.`);
-//         //     writeToFile('generatedReadme.md', `### my GitHub user name: ${res}\n`);
-//         //     writeToFile('generatedReadme.md', `### my GitHub link: https://github.com/${res}\n`);
-//         // };
-//         // if (j === 2) {
-//         //     writeToFile('generatedReadme.md', `### my email: ${res}\n`);
-//         // };
-//       });     
-// };
