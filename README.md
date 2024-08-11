@@ -6,3 +6,4 @@ In this project the folloing resorces were used:
 1. starter code from the task to the challenge 09 (module 09, University of Utah bootcamp);
 2. Professional README Guide https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
 3. source for code is a activity 26, module 09, University of Utah bootcamp.
+4. source for code is a YouTube video https://www.youtube.com/watch?v=CfS6eOBe8AY by @dev.channel

@@ -121,6 +121,14 @@ function init() {
         writeToFile('generatedReadme.md', ` ### ${res.problemSolved}\n `);
         writeToFile('generatedReadme.md', ` ### ${res.learn}\n `);
 
+        writeToFile('generatedReadme.md', `## Table of Contents\n`);
+        writeToFile('generatedReadme.md', ` ### [Installation](#installation)\n`);
+        writeToFile('generatedReadme.md', ` ### [Usage](#usage)\n`);
+        writeToFile('generatedReadme.md', ` ### [Credits](#credits)\n`);
+        // writeToFile('generatedReadme.md', ` ### [How to Contribute](#How to Contribute)\n`);
+        writeToFile('generatedReadme.md', ` ### [Tests](#tests)\n`);
+        writeToFile('generatedReadme.md', ` ### [Questions](#questions)\n`);
+
         writeToFile('generatedReadme.md', `## Installation\n`);
         writeToFile('generatedReadme.md', ` ### ${res.installation}\n `);
 
