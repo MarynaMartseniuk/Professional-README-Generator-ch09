@@ -81,9 +81,12 @@ const questions1 = [
 // TODO: Create a function to write README file
 // add user new-input to the readme.md to the previous input that was done before 
 function writeToFile(fileName, data) {
-    fs.appendFile(fileName, data, (err) =>
+    fs.writeFile(fileName, `# ${data.title}\n`, (err) =>
         err ? console.error(err) : console.log('Success! Check readme.md')
     );
+    // fs.appendFile(fileName, data, (err) =>
+    //     err ? console.error(err) : console.log('Success! Check readme.md')
+    // );
 }
 
 // TODO: Create a function to initialize app
@@ -93,6 +96,7 @@ function init() {
     .prompt(questions1)
     .then((res) => {
         console.log(res);
+        writeToFile('generatedReadme.md', res);
     }
     );
 
