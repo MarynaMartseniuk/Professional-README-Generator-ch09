@@ -190,7 +190,7 @@ function init() {
         writeToFile('generatedReadme.md', ` ### ${res.tests}\n `);
 
         writeToFile('generatedReadme.md', `## Questions\n`);
-        writeToFile('generatedReadme.md', `### If you have any questions, please, contact me using my contact info bellow.\n`);
+        writeToFile('generatedReadme.md', `### If you have any questions, please, contact me using my contact info bellow:\n`);
         writeToFile('generatedReadme.md', ` ### my GitHub name: ${res.github}\n `);
         writeToFile('generatedReadme.md', `### my GitHub link: https://github.com/${res.github}\n`);
         writeToFile('generatedReadme.md', ` ### my email address: ${res.email}\n `);
