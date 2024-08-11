@@ -68,10 +68,6 @@ const questions1 = [
             return 'N/A';
         },
     },
-
-
-
-
     {
         type: 'checkbox',
         message: 'Select a License Type:',
@@ -83,14 +79,7 @@ const questions1 = [
           }
            return true;
         },
-      },
-
-
-
-
-
-
-
+    },
     {
         type: 'input',
         name: 'contribution',
