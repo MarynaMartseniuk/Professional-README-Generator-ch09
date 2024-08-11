@@ -68,6 +68,29 @@ const questions1 = [
             return 'N/A';
         },
     },
+
+
+
+
+    {
+        type: 'checkbox',
+        message: 'Select a License Type:',
+        name: 'license',
+        choices: [ "Apache License 2.0", "GNU General Public License v3.0", "MIT License", "None"],
+        validate(answer) {
+          if (answer.length === 0) {
+            return 'You must choose a License Type or None';
+          }
+           return true;
+        },
+      },
+
+
+
+
+
+
+
     {
         type: 'input',
         name: 'contribution',
@@ -111,10 +134,11 @@ function init() {
     .prompt(questions1)
     .then((res) => {
         console.log(res);
+        console.log(res.license[0]);
         fs.writeFile('generatedReadme.md', `# ${res.title.toUpperCase()}\n`, (err) =>
             err ? console.error(err) : console.log('Success! Check readme.md')
         );
-  
+
         writeToFile('generatedReadme.md', `## Description\n`);
         writeToFile('generatedReadme.md', ` ### ${res.motivation}\n `);
         writeToFile('generatedReadme.md', ` ### ${res.whyBuild}\n `);
@@ -125,6 +149,7 @@ function init() {
         writeToFile('generatedReadme.md', ` ### [Installation](#installation)\n`);
         writeToFile('generatedReadme.md', ` ### [Usage](#usage)\n`);
         writeToFile('generatedReadme.md', ` ### [Credits](#credits)\n`);
+        writeToFile('generatedReadme.md', ` ### [License](#license)\n`);
         // writeToFile('generatedReadme.md', ` ### [How to Contribute](#How to Contribute)\n`);
         writeToFile('generatedReadme.md', ` ### [Tests](#tests)\n`);
         writeToFile('generatedReadme.md', ` ### [Questions](#questions)\n`);
@@ -145,6 +170,19 @@ function init() {
         if (res.credits3 !== 'N/A') {
             writeToFile('generatedReadme.md', ` ### ${res.credits3}\n `);
         };
+
+        writeToFile('generatedReadme.md', `## License\n`);
+        writeToFile('generatedReadme.md', ` ### ${res.license}\n `);
+        if (res.license[0] === 'Apache License 2.0') {
+            writeToFile('generatedReadme.md', `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)\n `);
+        };
+        if (res.license[0] === 'GNU General Public License v3.0') {
+            writeToFile('generatedReadme.md', `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)\n `);
+        };
+        if (res.license[0] ===  'MIT License') {
+            writeToFile('generatedReadme.md', `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n`);
+        };
+
         writeToFile('generatedReadme.md', `## How to Contribute\n`);
         writeToFile('generatedReadme.md', ` ### ${res.contribution}\n `);
 
