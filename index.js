@@ -172,7 +172,7 @@ function init() {
         };
 
         writeToFile('generatedReadme.md', `## License\n`);
-        writeToFile('generatedReadme.md', ` ### ${res.license}\n `);
+        writeToFile('generatedReadme.md', ` ### All assets and code are under ${res.license}\n `);
         if (res.license[0] === 'Apache License 2.0') {
             writeToFile('generatedReadme.md', `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)\n `);
         };
@@ -190,7 +190,7 @@ function init() {
         writeToFile('generatedReadme.md', ` ### ${res.tests}\n `);
 
         writeToFile('generatedReadme.md', `## Questions\n`);
-        writeToFile('generatedReadme.md', `### If you have any questions, please, contact me using my contact info bellow.\n`);
+        writeToFile('generatedReadme.md', `### If you have any questions, please, contact me using my contact info bellow:\n`);
         writeToFile('generatedReadme.md', ` ### my GitHub name: ${res.github}\n `);
         writeToFile('generatedReadme.md', `### my GitHub link: https://github.com/${res.github}\n`);
         writeToFile('generatedReadme.md', ` ### my email address: ${res.email}\n `);
