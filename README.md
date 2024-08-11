@@ -7,7 +7,7 @@ Professional README Generator is  a command-line application that dynamically ge
 ### This App hepls a developer to write a good-quality README-file. This App asks all necessary questions and in an order they should be answered so a developer will get a ready to use file at the end. This App saves time for developer to search on how README-file should look like. This App will keep the same style for all README-files. Using this App a developer should not worry about to forget anything.
 ### This project was interesting and usefull for me because, as a begginer, I learned how to use NodeJs, Inquirer package, Mardown syntax.
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
