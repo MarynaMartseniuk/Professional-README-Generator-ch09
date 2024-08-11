@@ -13,6 +13,8 @@ Professional README Generator is  a command-line application that dynamically ge
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 
