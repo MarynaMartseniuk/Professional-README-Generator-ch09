@@ -2,8 +2,8 @@
 ## Description
  ### q
   ### q
-  ### qq
   ### q
+  ### qq
  ## Table of Contents
  ### [Installation](#installation)
  ### [Usage](#usage)
@@ -18,17 +18,15 @@
  ## Credits
  ### q
   ### q
-  ### q
  ## License
- ### MIT License
- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-## How to Contribute
- ### a
+ ### All assets and code are under MIT License
+ ## How to Contribute
+ ### q
  ## Tests
- ### a
+ ### q
  ## Questions
-### If you have any questions, please, contact me using my contact info bellow.
- ### my GitHub name: a
- ### my GitHub link: https://github.com/a
- ### my email address: a
+### If you have any questions, please, contact me using my contact info bellow:
+ ### my GitHub name: q
+ ### my GitHub link: https://github.com/q
+ ### my email address: q
  

@@ -29,20 +29,20 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license === 'Apache License 2.0') {
+  if (license[0] === 'Apache License 2.0') {
     return 'A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code. For more info, please follow the link.';
   };
-  if (license === 'GNU General Public License v3.0') {
+  if (license[0] === 'GNU General Public License v3.0') {
     return 'The GNU General Public License is a free, copyleft license for software and other kinds of works. Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. For more info, please follow the link.';
   };
-  if (license === 'MIT License') {
+  if (license[0] === 'MIT License') {
     return 'A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code. Contributors provide an express grant of patent rights. For more info, please follow the link.';
   };
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${renderLicenseSection(data.license)}
 
 `;
 }
