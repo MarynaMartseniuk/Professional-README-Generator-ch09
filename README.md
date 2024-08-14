@@ -18,26 +18,14 @@ Professional README Generator is  a command-line application that dynamically ge
 
 ## Installation
 
-To use this App you need to save a code on your PC and then run it in a Command Line. You will need to install NodeJS on your PC as well.
+### To use this App you need to save a code on your PC and then run it in a Command Line. You will need to install NodeJS on your PC as well.
 
 ## Usage
 
-In a Command Line:
-1. go to the folder with the code;
-2. first run "npm i" to install Inquirer package;
-3. second run "node index.js";
-4. answer all questions that App will ask you;
-5. after this is done the geberatedReadme.md file will appear in the same folder where the code is saved.
+### In a Command Line: go to the folder with the code; first run "npm i" to install Inquirer package; second run "node index.js"; answer all questions that App will ask you; after this is done the geberatedReadme.md file will appear in the same folder where the code is saved.
 
 ## Credits
-In this project the folloing resorces were used:
-1. starter code from the task to the challenge 09 (module 09, University of Utah bootcamp);
-2. Professional README Guide https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
-3. source for code: activity 26, module 09, University of Utah bootcamp.
-4. source for code: a YouTube video https://www.youtube.com/watch?v=CfS6eOBe8AY by @dev.channel
-5. source for license badges https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
-6. source for license https://choosealicense.com/
-7. source for code: https://www.npmjs.com/package/inquirer/v/8.2.4#methods
+### In this project the folloing resorces were used: starter code from the task to the challenge 09 (module 09, University of Utah bootcamp); Professional README Guide https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide; source for code: activity 26, module 09, University of Utah bootcamp; source for code: a YouTube video https://www.youtube.com/watch?v=CfS6eOBe8AY by @dev.channel; source for license badges https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba; source for license https://choosealicense.com/; source for code: https://www.npmjs.com/package/inquirer/v/8.2.4#methods
 
 ## License
 ### All assets and code are under the MIT license. Please, check more info in lisence section of this repo.

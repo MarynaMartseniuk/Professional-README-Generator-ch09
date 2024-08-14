@@ -5,7 +5,7 @@ const fs = require('fs');
 // add 'inquire' library to make this app user -friendly and easier coding
 const inquirer = require('inquirer');
 // add 'generateMarkdown.js' file to add styly to our professional readme file
-const gMD = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions1 = [
@@ -135,13 +135,13 @@ function init() {
         writeToFile('generatedReadme.md', ` ### ${res.learn}\n `);
 
         writeToFile('generatedReadme.md', `## Table of Contents\n`);
-        writeToFile('generatedReadme.md', ` ### [Installation](#installation)\n`);
-        writeToFile('generatedReadme.md', ` ### [Usage](#usage)\n`);
-        writeToFile('generatedReadme.md', ` ### [Credits](#credits)\n`);
-        writeToFile('generatedReadme.md', ` ### [License](#license)\n`);
+        writeToFile('generatedReadme.md', ` ### [## Installation](#installation)\n`);
+        writeToFile('generatedReadme.md', ` ### [## Usage](#usage)\n`);
+        writeToFile('generatedReadme.md', ` ### [## Credits](#credits)\n`);
+        writeToFile('generatedReadme.md', ` ### [## License](#license)\n`);
         // writeToFile('generatedReadme.md', ` ### [How to Contribute](#How to Contribute)\n`);
-        writeToFile('generatedReadme.md', ` ### [Tests](#tests)\n`);
-        writeToFile('generatedReadme.md', ` ### [Questions](#questions)\n`);
+        writeToFile('generatedReadme.md', ` ### [## Tests](#tests)\n`);
+        writeToFile('generatedReadme.md', ` ### [## Questions](#questions)\n`);
 
         writeToFile('generatedReadme.md', `## Installation\n`);
         writeToFile('generatedReadme.md', ` ### ${res.installation}\n `);
@@ -162,15 +162,13 @@ function init() {
 
         writeToFile('generatedReadme.md', `## License\n`);
         writeToFile('generatedReadme.md', ` ### All assets and code are under ${res.license}\n `);
-        if (res.license[0] === 'Apache License 2.0') {
-            writeToFile('generatedReadme.md', `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)\n `);
-        };
-        if (res.license[0] === 'GNU General Public License v3.0') {
-            writeToFile('generatedReadme.md', `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)\n `);
-        };
-        if (res.license[0] ===  'MIT License') {
-            writeToFile('generatedReadme.md', `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n`);
-        };
+
+        licenseData = generateMarkdown(res);
+        //console.log(generateMarkdown(res));
+        console.log(licenseData[1]);
+        writeToFile('generatedReadme.md', `${licenseData[0]}\n`);
+        writeToFile('generatedReadme.md', `### ${licenseData[1]}\n`);
+        writeToFile('generatedReadme.md', `### ${licenseData[2]}\n`);
 
         writeToFile('generatedReadme.md', `## How to Contribute\n`);
         writeToFile('generatedReadme.md', ` ### ${res.contribution}\n `);
