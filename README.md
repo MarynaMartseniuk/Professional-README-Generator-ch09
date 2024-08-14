@@ -18,7 +18,7 @@ Professional README Generator is  a command-line application that dynamically ge
 
 ## Installation
 
-### To use this App you need to save a code on your PC and then run it in a Command Line. You will need to install NodeJS on your PC as well.
+### To use this App you need to install NodeJS on your PC, copy this repo with a code, then use a Command Line to run this App. 
 
 ## Usage
 
