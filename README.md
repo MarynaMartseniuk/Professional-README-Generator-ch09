@@ -3,7 +3,7 @@ Professional README Generator is  a command-line application that dynamically ge
 
 ## Description
 ### Motivation to create this App was a wish to have a professional readme helper so that I can easy write README-files for my projects in a future.
-### I built this App because it had a lot coding challanges neede to be solved. For me, as for a begginer, it was importent to get a new skills and got understanding that "I can do it!".
+### I built this App because it had a lot coding challanges needed to be solved. For me, as for a begginer, it was importent to get a new skills and got understanding that "I can do it!".
 ### This App hepls a developer to write a good-quality README-file. This App asks all necessary questions and in an order they should be answered so a developer will get a ready to use file at the end. This App saves time for developer to search on how README-file should look like. This App will keep the same style for all README-files. Using this App a developer should not worry about to forget anything.
 ### This project was interesting and usefull for me because, as a begginer, I learned how to use NodeJs, Inquirer package, Mardown syntax.
 
@@ -22,7 +22,12 @@ Professional README Generator is  a command-line application that dynamically ge
 
 ## Usage
 
-### In a Command Line: go to the folder with the code; first run "npm i" to install Inquirer package; second run "node index.js"; answer all questions that App will ask you; after this is done the geberatedReadme.md file will appear in the same folder where the code is saved.
+### In a Command Line: 
+1. go to the folder with the code;
+2. first run "npm i" to install Inquirer package;
+3. second run "node index.js";
+4. answer all questions that App will ask you;
+5. after this is done the geberatedReadme.md file will appear in the same folder where the code is saved.
 
 ### run the App will look like this:
 ![run the App will look like this:](https://github.com/MarynaMartseniuk/Professional-README-Generator-ch09/blob/main/assets/images/1.jpg)
