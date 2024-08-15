@@ -42,7 +42,7 @@ Professional README Generator is  a command-line application that dynamically ge
 ### In this project the folloing resorces were used: starter code from the task to the challenge 09 (module 09, University of Utah bootcamp); Professional README Guide https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide; source for code: activity 26, module 09, University of Utah bootcamp; source for code: a YouTube video https://www.youtube.com/watch?v=CfS6eOBe8AY by @dev.channel; source for license badges https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba; source for license https://choosealicense.com/; source for code: https://www.npmjs.com/package/inquirer/v/8.2.4#methods
 
 ## License
-### All assets and code are under the MIT license. Please, check more info in lisence section of this repo.
+### All assets and code are under the MIT license. Please, check more info in lisence section of this repo or use this link https://choosealicense.com/licenses/mit/.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## How to Contribute
