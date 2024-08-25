@@ -23,7 +23,7 @@ Professional README Generator is  a command-line application that dynamically ge
 ## Usage
 
 ### In a Command Line: 
-1. go to the folder with the code;
+1. in the Command Line/GitBush/Terminal go to the folder with the code;
 2. first run "npm i" to install Inquirer package;
 3. second run "node index.js";
 4. answer all questions that App will ask you;
